@@ -21,7 +21,7 @@ def plot_clusters(df):
     for row in df.itertuples():
         x = row.traj[0]
         y = row.traj[1]
-        plt.scatter(x, y, color=colors[row.cluster])
+        plt.plot(x, y, color=colors[row.cluster])
 
     plt.xlabel("X")
     plt.ylabel("Y")
@@ -134,7 +134,7 @@ class InputWindow(tk.Toplevel):
             x0 = x[0]
             y = traj[1]
             y0 = y[0]
-            plt.scatter(x-x0, y-y0)
+            plt.plot(x-x0, y-y0)
         
         plt.xlabel('x')
         plt.ylabel('y')
