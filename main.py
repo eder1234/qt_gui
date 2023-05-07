@@ -121,7 +121,6 @@ class InputWindow(tk.Toplevel):
             list_arrays = self.master_df['img'].values.reshape(-1).tolist()
             y_labels = cluster.AgglomerativeClustering(kClusters).fit_predict(list_arrays)
             self.master_df['cluster'] = y_labels
-            #print(self.master_df['traj'])
             plot_clusters(self.master_df)
         except ValueError:
             print("Invalid input. Please enter an integer.")
